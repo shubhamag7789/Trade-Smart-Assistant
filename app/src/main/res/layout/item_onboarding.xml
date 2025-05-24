@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!-- Trading-themed background pattern -->
+    <ImageView
+        android:id="@+id/backgroundPattern"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/trading_pattern"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Main illustration -->
+    <ImageView
+        android:id="@+id/illustration"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="48dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- Floating card for text content -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="32dp"
+        app:cardBackgroundColor="#1A1A1A"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/descriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#B3FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Feature highlights -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_chart"
+                        app:tint="@color/purple_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Real-time Charts"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_alert"
+                        app:tint="@color/purple_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Price Alerts"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_portfolio"
+                        app:tint="@color/purple_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Portfolio"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout> 

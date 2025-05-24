@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="240"
+    android:viewportHeight="240">
+    
+    <!-- Background Circle -->
+    <path
+        android:fillColor="#1A6C63FF"
+        android:pathData="M120,120m-100,0a100,100 0,1 1,200 0a100,100 0,1 1,-200 0"/>
+    
+    <!-- Bar Chart -->
+    <path
+        android:fillColor="@color/purple_primary"
+        android:pathData="M60,160L60,100L80,100L80,160Z"/>
+    <path
+        android:fillColor="@color/purple_primary"
+        android:pathData="M100,160L100,80L120,80L120,160Z"/>
+    <path
+        android:fillColor="@color/purple_primary"
+        android:pathData="M140,160L140,120L160,120L160,160Z"/>
+    <path
+        android:fillColor="@color/purple_primary"
+        android:pathData="M180,160L180,60L200,60L200,160Z"/>
+    
+    <!-- Line Chart -->
+    <path
+        android:strokeColor="@color/purple_primary"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M60,140L100,100L140,120L180,80"/>
+    
+    <!-- Data Points -->
+    <path
+        android:fillColor="@color/purple_primary"
+        android:pathData="M60,140m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0"/>
+    <path
+        android:fillColor="@color/purple_primary"
+        android:pathData="M100,100m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0"/>
+    <path
+        android:fillColor="@color/purple_primary"
+        android:pathData="M140,120m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0"/>
+    <path
+        android:fillColor="@color/purple_primary"
+        android:pathData="M180,80m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0"/>
+</vector> 

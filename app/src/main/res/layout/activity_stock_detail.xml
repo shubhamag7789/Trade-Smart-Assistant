@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!-- Top Bar -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:clipToPadding="false"
+        android:padding="16dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/marketStatus"
+        app:layout_constraintTop_toBottomOf="@id/backButton">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Company Info -->
+            <ImageView
+                android:id="@+id/companyLogo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/companyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/companyLogo"
+                app:layout_constraintTop_toTopOf="@id/companyLogo" />
+
+            <!-- Stock Price Info -->
+            <TextView
+                android:id="@+id/priceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/companyLogo" />
+
+            <TextView
+                android:id="@+id/currencyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="INR"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/priceText"
+                app:layout_constraintStart_toEndOf="@id/priceText" />
+
+            <TextView
+                android:id="@+id/changeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/priceText" />
+
+            <!-- Mini Chart -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/priceChart"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/changeText" />
+
+            <!-- Add to Watchlist Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/watchlistButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:text="+ Add to Watchlist"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:backgroundTint="#1A1A1A"
+                app:cornerRadius="8dp"
+                app:layout_constraintTop_toBottomOf="@id/priceChart"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp" />
+
+            <!-- Price Ranges -->
+            <TextView
+                android:id="@+id/openLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Open:"
+                android:textColor="#808080"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/watchlistButton" />
+
+            <TextView
+                android:id="@+id/openPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/openLabel"
+                app:layout_constraintStart_toEndOf="@id/openLabel" />
+
+            <TextView
+                android:id="@+id/previousCloseLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="Previous Close:"
+                android:textColor="#808080"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/openLabel"
+                app:layout_constraintStart_toEndOf="@id/openPrice" />
+
+            <TextView
+                android:id="@+id/previousClosePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/previousCloseLabel"
+                app:layout_constraintStart_toEndOf="@id/previousCloseLabel" />
+
+            <!-- Range Bars -->
+            <TextView
+                android:id="@+id/daysRangeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Day's Range"
+                android:textColor="#808080"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/openLabel" />
+
+            <TextView
+                android:id="@+id/daysRangeLow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/daysRangeLabel" />
+
+            <View
+                android:id="@+id/daysRangeBar"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@color/green"
+                app:layout_constraintBottom_toBottomOf="@id/daysRangeLow"
+                app:layout_constraintEnd_toStartOf="@id/daysRangeHigh"
+                app:layout_constraintStart_toEndOf="@id/daysRangeLow"
+                app:layout_constraintTop_toTopOf="@id/daysRangeLow" />
+
+            <TextView
+                android:id="@+id/daysRangeHigh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/daysRangeLow" />
+
+            <TextView
+                android:id="@+id/weekRangeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="52W Range"
+                android:textColor="#808080"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/daysRangeLow" />
+
+            <TextView
+                android:id="@+id/weekRangeLow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/weekRangeLabel" />
+
+            <View
+                android:id="@+id/weekRangeBar"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@color/green"
+                app:layout_constraintBottom_toBottomOf="@id/weekRangeLow"
+                app:layout_constraintEnd_toStartOf="@id/weekRangeHigh"
+                app:layout_constraintStart_toEndOf="@id/weekRangeLow"
+                app:layout_constraintTop_toTopOf="@id/weekRangeLow" />
+
+            <TextView
+                android:id="@+id/weekRangeHigh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/weekRangeLow" />
+
+            <!-- Key Stats -->
+            <TextView
+                android:id="@+id/keyStatsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Key stats:"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/weekRangeLow" />
+
+            <LinearLayout
+                android:id="@+id/statsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/keyStatsLabel">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="4dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Volume"
+                        android:textColor="#808080"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/volumeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="4dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Average Volume (3M)"
+                        android:textColor="#808080"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/avgVolumeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="4dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Market Capitalization"
+                        android:textColor="#808080"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/marketCapValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="4dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Dividend Yield (FY)"
+                        android:textColor="#808080"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/dividendYieldValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <!-- Market Status -->
+    <TextView
+        android:id="@+id/marketStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:drawableStart="@drawable/ic_clock"
+        android:drawablePadding="8dp"
+        android:textColor="#808080"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonsContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:drawableTint="#808080" />
+
+    <!-- Buy and Sell Buttons Container -->
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Buy Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buyButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="Buy"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:backgroundTint="@color/purple_primary"
+            app:cornerRadius="8dp" />
+
+        <!-- Sell Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sellButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="Sell"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:backgroundTint="#FF4444"
+            app:cornerRadius="8dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout> 

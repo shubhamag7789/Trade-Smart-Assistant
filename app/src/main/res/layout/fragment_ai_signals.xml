@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!-- Signal Type Chips -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/signalTypeChips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        app:chipSpacingHorizontal="8dp"
+        app:singleLine="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/buySignalsChip"
+            style="@style/SignalChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buy Signals"
+            app:chipIcon="@drawable/ic_buy_signal"
+            app:chipIconTint="#4CAF50" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/sellSignalsChip"
+            style="@style/SignalChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sell Signals"
+            app:chipIcon="@drawable/ic_sell_signal"
+            app:chipIconTint="#F44336" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/holdSignalsChip"
+            style="@style/SignalChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hold Signals"
+            app:chipIcon="@drawable/ic_hold_signal"
+            app:chipIconTint="#FFC107" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <!-- Signals RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/signalsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signalTypeChips" />
+
+</androidx.constraintlayout.widget.ConstraintLayout> 

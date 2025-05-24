@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="@color/purple_primary"
+        android:pathData="M60,60m-60,0a60,60 0,1 1,120 0a60,60 0,1 1,-120 0" />
+    
+    <!-- Smart trading chart -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M30,80L45,65L60,75L75,55L90,70" />
+    
+    <!-- Brain icon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M60,35C50,35 45,45 45,50C45,55 50,60 60,60C70,60 75,55 75,50C75,45 70,35 60,35ZM60,40C65,40 68,43 68,48C68,53 65,55 60,55C55,55 52,53 52,48C52,43 55,40 60,40Z" />
+    
+    <!-- Circuit lines -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M45,50L52,50M68,50L75,50M60,35L60,40M60,55L60,60" />
+</vector> 

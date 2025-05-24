@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stock Market App</string>
+    <string name="onboarding_image">Onboarding Image</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started</string>
+</resources>

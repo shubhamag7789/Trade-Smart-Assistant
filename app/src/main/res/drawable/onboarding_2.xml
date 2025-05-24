@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="240"
+    android:viewportHeight="240">
+    
+    <!-- Background Circle -->
+    <path
+        android:fillColor="#1A6C63FF"
+        android:pathData="M120,120m-100,0a100,100 0,1 1,200 0a100,100 0,1 1,-200 0"/>
+    
+    <!-- Trading Icon -->
+    <path
+        android:fillColor="@color/purple_primary"
+        android:pathData="M80,80L160,80L160,160L80,160Z"/>
+    
+    <!-- Buy Arrow -->
+    <path
+        android:strokeColor="@color/purple_primary"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M100,100L140,100L140,140L100,140Z"/>
+    
+    <!-- Sell Arrow -->
+    <path
+        android:strokeColor="@color/purple_primary"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M160,100L120,100L120,140L160,140Z"/>
+    
+    <!-- Clock Hands -->
+    <path
+        android:strokeColor="@color/purple_primary"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M120,120L120,80"/>
+    <path
+        android:strokeColor="@color/purple_primary"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M120,120L160,120"/>
+</vector> 

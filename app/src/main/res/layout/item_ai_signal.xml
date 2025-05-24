@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="#1A1A1A"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Stock Symbol -->
+        <TextView
+            android:id="@+id/symbolTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="AAPL" />
+
+        <!-- Company Name -->
+        <TextView
+            android:id="@+id/companyNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#808080"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/priceChangeTextView"
+            app:layout_constraintStart_toEndOf="@id/symbolTextView"
+            app:layout_constraintTop_toTopOf="@id/symbolTextView"
+            tools:text="Apple Inc." />
+
+        <!-- Price Change -->
+        <TextView
+            android:id="@+id/priceChangeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="+2.34%"
+            tools:textColor="#4CAF50" />
+
+        <!-- Signal Type -->
+        <TextView
+            android:id="@+id/signalTypeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:textAllCaps="true"
+            android:textSize="12sp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:background="@drawable/signal_type_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/symbolTextView"
+            tools:text="BUY"
+            tools:textColor="#4CAF50" />
+
+        <!-- AI Confidence Label -->
+        <TextView
+            android:id="@+id/confidenceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="AI Confidence"
+            android:textColor="#808080"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signalTypeTextView" />
+
+        <!-- Confidence Value -->
+        <TextView
+            android:id="@+id/confidenceValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/confidenceLabel"
+            app:layout_constraintTop_toTopOf="@id/confidenceLabel"
+            tools:text="92%" />
+
+        <!-- Confidence Progress Bar -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/confidenceProgressBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:progress="75"
+            app:indicatorColor="@color/purple_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/confidenceLabel"
+            app:trackColor="#424242"
+            app:trackCornerRadius="4dp"
+            app:trackThickness="4dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView> 

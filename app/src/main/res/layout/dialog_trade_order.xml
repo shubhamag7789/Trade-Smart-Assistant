@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background"
+    android:paddingBottom="32dp">
+
+    <!-- Handle -->
+    <View
+        android:id="@+id/bottomSheetHandle"
+        android:layout_width="32dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="12dp"
+        android:background="#424242"
+        android:backgroundTint="#424242"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottomSheetHandle" />
+
+    <!-- Stock Info -->
+    <TextView
+        android:id="@+id/stockInfoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#808080"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+    <!-- Units Label -->
+    <TextView
+        android:id="@+id/unitsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Units"
+        android:textColor="#808080"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@id/stockInfoTextView" />
+
+    <!-- Units Value -->
+    <TextView
+        android:id="@+id/unitsValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@id/unitsLabel"
+        app:layout_constraintTop_toBottomOf="@id/unitsLabel" />
+
+    <!-- Units Slider -->
+    <com.google.android.material.slider.Slider
+        android:id="@+id/unitsSlider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        android:valueFrom="100"
+        android:valueTo="10000"
+        android:stepSize="100"
+        app:thumbColor="@color/purple_primary"
+        app:trackColorActive="@color/purple_primary"
+        app:trackColorInactive="#424242"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/unitsValueTextView" />
+
+    <!-- Lots Label -->
+    <TextView
+        android:id="@+id/lotsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Lots"
+        android:textColor="#808080"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/unitsSlider"
+        app:layout_constraintTop_toBottomOf="@id/unitsSlider" />
+
+    <!-- Lots Value -->
+    <TextView
+        android:id="@+id/lotsValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/lotsLabel"
+        app:layout_constraintStart_toEndOf="@id/lotsLabel"
+        app:layout_constraintTop_toTopOf="@id/lotsLabel" />
+
+    <!-- Price Condition Switch -->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/priceConditionSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Price Condition"
+        android:textColor="@color/white"
+        app:thumbTint="@color/purple_primary"
+        app:trackTint="#424242"
+        app:layout_constraintTop_toBottomOf="@id/lotsLabel" />
+
+    <!-- Protection Switch -->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/protectionSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Protection"
+        android:textColor="@color/white"
+        app:thumbTint="@color/purple_primary"
+        app:trackTint="#424242"
+        app:layout_constraintTop_toBottomOf="@id/priceConditionSwitch" />
+
+    <!-- Order Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/orderButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="32dp"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@id/protectionSwitch" />
+
+</androidx.constraintlayout.widget.ConstraintLayout> 

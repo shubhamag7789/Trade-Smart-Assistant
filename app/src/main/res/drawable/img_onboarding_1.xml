@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="240"
+    android:viewportHeight="240">
+
+    <!-- Background Chart -->
+    <path
+        android:fillColor="#4D6C63FF"
+        android:pathData="M20,180 L60,140 L100,160 L140,120 L180,150 L220,90"/>
+
+    <!-- Person -->
+    <path
+        android:fillColor="#6C63FF"
+        android:pathData="M120,100 C120,80 140,80 140,100 L140,140 L120,140 Z"/>
+    
+    <!-- Money Icons -->
+    <path
+        android:fillColor="#6C63FF"
+        android:pathData="M160,60 L180,60 L180,80 L160,80 Z"/>
+    
+    <path
+        android:fillColor="#6C63FF"
+        android:pathData="M80,40 L100,40 L100,60 L80,60 Z"/>
+
+    <!-- Chart Lines -->
+    <path
+        android:strokeColor="#6C63FF"
+        android:strokeWidth="2"
+        android:pathData="M40,160 L80,120 L120,140 L160,100 L200,130"/>
+</vector> 

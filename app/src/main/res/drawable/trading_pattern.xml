@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    
+    <!-- Grid lines -->
+    <path
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="0.5"
+        android:pathData="M0,0L100,0M0,20L100,20M0,40L100,40M0,60L100,60M0,80L100,80M0,100L100,100M0,0L0,100M20,0L20,100M40,0L40,100M60,0L60,100M80,0L80,100M100,0L100,100" />
+    
+    <!-- Trading chart lines -->
+    <path
+        android:strokeColor="#4DFFFFFF"
+        android:strokeWidth="1"
+        android:pathData="M10,80L20,70L30,75L40,60L50,65L60,50L70,55L80,40L90,45" />
+    
+    <!-- Candlestick patterns -->
+    <path
+        android:strokeColor="#4DFFFFFF"
+        android:strokeWidth="1"
+        android:pathData="M25,30L25,40M20,30L30,30M20,40L30,40" />
+    <path
+        android:strokeColor="#4DFFFFFF"
+        android:strokeWidth="1"
+        android:pathData="M45,20L45,35M40,20L50,20M40,35L50,35" />
+    <path
+        android:strokeColor="#4DFFFFFF"
+        android:strokeWidth="1"
+        android:pathData="M65,45L65,60M60,45L70,45M60,60L70,60" />
+    <path
+        android:strokeColor="#4DFFFFFF"
+        android:strokeWidth="1"
+        android:pathData="M85,25L85,40M80,25L90,25M80,40L90,40" />
+</vector> 

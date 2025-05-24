@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "266785711823",
+    "project_id": "tradingsmart-6f879",
+    "storage_bucket": "tradingsmart-6f879.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266785711823:android:375cee8e44d081ab1eb9ba",
+        "android_client_info": {
+          "package_name": "com.example.mad_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266785711823-o1s8ad5kjbc35mqfnvt1gjrljsktgs1c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mad_project",
+            "certificate_hash": "9d0947b4444d239f141889630502faed68b88ae8"
+          }
+        },
+        {
+          "client_id": "266785711823-k3d8uah00hc37ps9ussgapcmo6i22b50.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhXkMGEl2KjItTI7A4c6fi0Vra2YTpOPw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266785711823-k3d8uah00hc37ps9ussgapcmo6i22b50.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

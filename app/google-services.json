@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "266785711823",
+    "project_id": "tradingsmart-6f879",
+    "storage_bucket": "tradingsmart-6f879.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266785711823:android:375cee8e44d081ab1eb9ba",
+        "android_client_info": {
+          "package_name": "com.example.mad_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhXkMGEl2KjItTI7A4c6fi0Vra2YTpOPw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
